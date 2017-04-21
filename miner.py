@@ -13,7 +13,7 @@ class StdOutListener(StreamListener):
 
     def __init__(self, api = None):
         self.api = api
-        self.filename = sys.argv[2]+'_'+time.strftime('%Y%m%d-%H%M%S')+'.csv'
+        self.filename = sys.argv[1]+'_'+time.strftime('%Y%m%d-%H%M%S')+'.csv'
         csvFile = open(self.filename, 'w')
         csvWriter = csv.writer(csvFile)
         csvWriter.writerow(['text',
@@ -121,10 +121,10 @@ def start_mining():
     with open('credentials.json') as creds:
         credentials = json.load(creds)
 
-    consumer_key = credentials['twitter'][sys.argv[1]]['consumer_key']
-    consumer_secret = credentials['twitter'][sys.argv[1]]['consumer_secret']
-    access_token = credentials['twitter'][sys.argv[1]]['access_token']
-    access_token_secret = credentials['twitter'][sys.argv[1]]['access_secret']
+    consumer_key = credentials['consumer_key']
+    consumer_secret = credentials['consumer_secret']
+    access_token = credentials['access_token']
+    access_token_secret = credentials['access_secret']
 
     l = StdOutListener()
     auth = OAuthHandler(consumer_key, consumer_secret)
@@ -133,7 +133,7 @@ def start_mining():
 
     while True:
         try:
-            stream.filter(track=sys.argv[3:])
+            stream.filter(track=sys.argv[2:])
         except:
             continue
 if __name__ == '__main__':
