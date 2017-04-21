@@ -2,4 +2,5 @@
 .ipynb_checkpoints/
 credentials.json
 full_data/
+data/
 clean_data.csv
