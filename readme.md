@@ -20,7 +20,7 @@ Create a [Twitter app](https://apps.twitter.com/) and put the credentials in a f
 For getting Science March tweets:
 
 ```
-python miner.py 'data/sciencemarch' \#ScienceMarch \#MarchforScience \#ScienceMarchDC \#ScienceMarchLA \#ScienceMarchBoston \#ScienceMarchLDN \#ScienceMarchSF \#ScienceMarchIND \#ScienceMarchSTL \#scimarchsea \#MarchforSciencePDX ScienceMarchDC "science march"
+python miner.py 'data/sciencemarch' \#ScienceMarch \#MarchforScience \#ScienceMarchDC \#ScienceMarchLA \#ScienceMarchBoston \#ScienceMarchLDN \#ScienceMarchSF \#ScienceMarchIND \#ScienceMarchSTL \#scimarchsea \#MarchforSciencePDX \#marginsci ScienceMarchDC "science march"
 ```
 
 This will put the data in a CSV within a folder called `data/`.
